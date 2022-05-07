@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    
+    <div class="col-md-12">
+        {% for posts in post %}
+    <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-3">
+                    {% if posts.image %}
+                        <img class="card-img" src="{{posts.image.url}}" height="200" alt="">
+                        {% else %}
+                        <p>Resim yok</p>
+                        {% endif %}
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <div class="card-title">
+                          <p>{{ posts.author }}</p>  
+                        </div>
+                        <p class="card-text">
+                           {{ posts.content|striptags }}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                               {{ posts.created_date}}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+         </div>
+        
+                {% endfor %}
+            </div>
+        <a href="/" class="btn btn-primary">Geri dön</a>
+{% endblock content %}

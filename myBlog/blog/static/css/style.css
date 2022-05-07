@@ -1,0 +1,26 @@
+body{
+    background-color: #f7f7f7;
+  }
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-text h2 {
+    font-size: 70px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+footer {
+    background-color: #333;
+    height: 25vh;
+    position: relative;
+    margin-top: 20px;
+}
+.footer {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
