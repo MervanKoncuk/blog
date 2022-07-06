@@ -22,11 +22,13 @@ def create(request):
     context = {
         'form':form,
     }
+    profile = request.user
     if request.method == "POST":
         form = ListForm(request.POST or None, request.FILES or None)
         if form.is_valid:
-            form.user=request.user
-            form.save()
+            post = form.save(commit=False)
+            post.user = profile
+            post.save()
             messages.add_message(request, messages.SUCCESS, 'Blogunuz oluşturuldu.')
             return render(request, "create.html", context)
             

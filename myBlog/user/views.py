@@ -16,7 +16,6 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.add_message(request, messages.SUCCESS, 'Oturum açıldı')
-            print('login başarılı')
             return redirect('index')
         else:
             messages.add_message(request, messages.ERROR, 'Hatalı username veya parola')
