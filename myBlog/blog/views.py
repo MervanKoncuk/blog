@@ -35,3 +35,10 @@ def create(request):
     else:
         form = ListForm()
     return render(request, "create.html", context, )    
+
+
+def delete(request, id):
+    postlarim = Post.objects.filter(id = id)
+    postlarim.delete()
+    messages.add_message(request, messages.SUCCESS, 'Blogunuz silindi.')
+    return redirect("index")

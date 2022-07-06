@@ -25,5 +25,6 @@ urlpatterns = [
     path("", index, name="index"),
     path("post/<int:id>", details, name="details"),
     path("olustur", create, name="olustur"),
+    path("delete/<int:id>", delete, name="delete"),
     path('user/', include('user.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

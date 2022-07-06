@@ -19,7 +19,7 @@ def login(request):
             return redirect('index')
         else:
             messages.add_message(request, messages.ERROR, 'Hatalı username veya parola')
-            return redirect('index')
+            return redirect('login')
     else:
         return render(request, 'user/login.html')
 
